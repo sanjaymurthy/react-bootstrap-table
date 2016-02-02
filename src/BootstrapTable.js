@@ -198,41 +198,45 @@ class BootstrapTable extends React.Component {
     var tableFilter = this.renderTableFilter(columns);
     var isSelectAll = this.isSelectAll();
     return (
-      <div className="react-bs-container" ref="table">
-        {toolBar}
-        <div className="react-bs-table-container" style={style}>
-          <TableHeader
-            ref="header"
-            rowSelectType={this.props.selectRow.mode}
-            hideSelectColumn={this.props.selectRow.hideSelectColumn}
-            sortName={sortInfo ? sortInfo.sortField : undefined}
-            sortOrder={sortInfo ? sortInfo.order : undefined}
-            onSort={this.handleSort.bind(this)}
-            onSelectAllRow={this.handleSelectAllRow.bind(this)}
-            bordered={this.props.bordered}
-            condensed={this.props.condensed}
-            isSelectAll={isSelectAll}>
-            {this.props.children}
-          </TableHeader>
-          <TableBody
-            height={this.props.height}
-            maxHeight={this.props.maxHeight}
-            ref="body"
-            data={this.state.data}
-            columns={columns}
-            trClassName={this.props.trClassName}
-            striped={this.props.striped}
-            bordered={this.props.bordered}
-            hover={this.props.hover}
-            keyField={this.store.getKeyField()}
-            condensed={this.props.condensed}
-            selectRow={this.props.selectRow}
-            cellEdit={this.props.cellEdit}
-            selectedRowKeys={this.state.selectedRowKeys}
-            onRowClick={this.handleRowClick.bind(this)}
-            onSelectRow={this.handleSelectRow.bind(this)}
-            noDataText={this.props.options.noDataText}
-          />
+      <div>
+        <div className="react-bs-container" ref="table">
+          {toolBar}
+          <div className="react-bs-container-header">
+            <TableHeader
+              ref="header"
+              rowSelectType={this.props.selectRow.mode}
+              hideSelectColumn={this.props.selectRow.hideSelectColumn}
+              sortName={sortInfo ? sortInfo.sortField : undefined}
+              sortOrder={sortInfo ? sortInfo.order : undefined}
+              onSort={this.handleSort.bind(this)}
+              onSelectAllRow={this.handleSelectAllRow.bind(this)}
+              bordered={this.props.bordered}
+              condensed={this.props.condensed}
+              isSelectAll={isSelectAll}>
+              {this.props.children}
+            </TableHeader>
+          </div>
+          <div className='react-bs-container-body' style={ style }>
+            <TableBody
+              height={this.props.height}
+              maxHeight={this.props.maxHeight}
+              ref="body"
+              data={this.state.data}
+              columns={columns}
+              trClassName={this.props.trClassName}
+              striped={this.props.striped}
+              bordered={this.props.bordered}
+              hover={this.props.hover}
+              keyField={this.store.getKeyField()}
+              condensed={this.props.condensed}
+              selectRow={this.props.selectRow}
+              cellEdit={this.props.cellEdit}
+              selectedRowKeys={this.state.selectedRowKeys}
+              onRowClick={this.handleRowClick.bind(this)}
+              onSelectRow={this.handleSelectRow.bind(this)}
+              noDataText={this.props.options.noDataText}
+            />
+          </div>
         </div>
         {tableFilter}
         {pagination}

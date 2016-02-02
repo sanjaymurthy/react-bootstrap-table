@@ -16,12 +16,12 @@ class TableHeaderColumn extends React.Component{
   }
 
   render(){
-    var width = this.props.width!==null?parseInt(this.props.width):null;
+    // var width = this.props.width!==null?parseInt(this.props.width):null;
     var thStyle = {
       textAlign: this.props.dataAlign,
-      display: this.props.hidden?"none":null,
-      width: width,
-      maxWidth: width
+      display: this.props.hidden?"none":null
+      // width: width,
+      // maxWidth: width
     };
 
     const sortCaret = this.props.sort ? Util.renderReactSortCaret(this.props.sort) : null;
@@ -29,8 +29,7 @@ class TableHeaderColumn extends React.Component{
     var classes = this.props.className+" "+(this.props.dataSort?"sort-column":"");
     return(
       <th ref='header-col' className={classes} style={thStyle}>
-        <div ref="innerDiv" className="th-inner table-header-column"
-          onClick={this.handleColumnClick.bind(this)}>
+        <div ref="innerDiv" onClick={this.handleColumnClick.bind(this)}>
           {this.props.children}{sortCaret}
         </div>
       </th>
