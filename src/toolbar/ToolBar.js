@@ -170,7 +170,7 @@ class ToolBar extends React.Component{
 
   renderSearchPanel() {
     if(this.props.enableSearch) {
-      let classNames = 'form-group form-group-sm';
+      let classNames = 'form-group form-group-sm react-bs-table-search-form';
       let clearBtn = null;
       if(this.props.clearSearch) {
         clearBtn = (
@@ -181,7 +181,7 @@ class ToolBar extends React.Component{
               onClick={ this.handleClearBtnClick }>Clear</button>
           </span>
         );
-        classNames = 'form-group form-group-sm input-group input-group-sm';
+        classNames += ' input-group input-group-sm';
       }
 
       return (
