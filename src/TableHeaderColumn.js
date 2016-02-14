@@ -12,7 +12,7 @@ class TableHeaderColumn extends React.Component{
   }
 
   componentDidMount(){
-    this.refs.innerDiv.setAttribute("data-field", this.props.dataField);
+    this.refs["header-col"].setAttribute("data-field", this.props.dataField);
   }
 
   render(){
@@ -28,10 +28,11 @@ class TableHeaderColumn extends React.Component{
 
     var classes = this.props.className+" "+(this.props.dataSort?"sort-column":"");
     return(
-      <th ref='header-col' className={classes} style={thStyle}>
-        <div ref="innerDiv" onClick={this.handleColumnClick.bind(this)}>
-          {this.props.children}{sortCaret}
-        </div>
+      <th ref='header-col'
+          className={classes}
+          style={thStyle}
+          onClick={this.handleColumnClick.bind(this)}>
+        {this.props.children}{sortCaret}
       </th>
     )
   }
