@@ -5,7 +5,7 @@ class TableRow extends React.Component{
 
   rowClick(e){
     if(e.target.tagName !== "INPUT") {
-      if (this.props.selectRow && this.props.selectRow.clickToSelect) this.props.onSelectRow(e.currentTarget.rowIndex, !this.props.isSelected);
+      if (this.props.selectRow && this.props.selectRow.clickToSelect) this.props.onSelectRow(e.currentTarget.rowIndex+1, !this.props.isSelected);
       if (this.props.onRowClick) this.props.onRowClick(e.currentTarget.rowIndex);
     }
   }
