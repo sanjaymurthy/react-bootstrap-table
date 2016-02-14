@@ -200,9 +200,9 @@ class BootstrapTable extends React.Component {
     var tableFilter = this.renderTableFilter(columns);
     var isSelectAll = this.isSelectAll();
     return (
-      <div>
+      <div className="react-bs-table-container">
         {toolBar}
-        <div className="react-bs-container" ref="table">
+        <div className="react-bs-table" ref="table">
           <TableHeader
             ref="header"
             rowSelectType={this.props.selectRow.mode}
@@ -524,7 +524,7 @@ class BootstrapTable extends React.Component {
         dataSize = this.store.getDataNum();
       }
       return (
-        <div className="table-footer-pagination">
+        <div className="react-bs-table-pagination">
           <PaginationList
             ref="pagination"
             currPage={this.props.options.page || 1}
