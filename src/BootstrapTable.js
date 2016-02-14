@@ -201,8 +201,8 @@ class BootstrapTable extends React.Component {
     var isSelectAll = this.isSelectAll();
     return (
       <div>
+        {toolBar}
         <div className="react-bs-container" ref="table">
-          {toolBar}
           <TableHeader
             ref="header"
             rowSelectType={this.props.selectRow.mode}
@@ -571,7 +571,7 @@ class BootstrapTable extends React.Component {
         }];
       }
       return (
-        <div className="tool-bar">
+        <div className="react-bs-table-tool-bar">
           <ToolBar
             clearSearch={this.props.options.clearSearch}
             enableInsert={this.props.insertRow}
