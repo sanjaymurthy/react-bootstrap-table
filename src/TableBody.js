@@ -150,8 +150,8 @@ class TableBody extends React.Component{
 
     if(isSelectRowDefined){
       let style = {
-        width:35,
-        minWidth:35
+        width:10,
+        minWidth:10
       }
       selectRowHeader = this.props.selectRow.hideSelectColumn?null:(<th style={style} key={-1}></th>);
     }
